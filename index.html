@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Party Games Studio Pro — Songlap Deals</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ================= lock screen ================= -->
+<div id="lock-screen">
+  <div class="lock-card">
+    <div class="lock-logo">🎉</div>
+    <h1>Party Games Studio Pro</h1>
+    <p class="lock-sub">Enter the name and license code from your purchase to unlock the studio. Your code stays saved on this device.</p>
+    <form id="lock-form">
+      <input id="lock-name" type="text" placeholder="Your name" autocomplete="name">
+      <input id="lock-input" type="text" placeholder="License code (PTG-XXXXXX)" autocomplete="off" style="text-transform:uppercase">
+      <button id="lock-submit" class="btn btn-gold" type="submit">Unlock</button>
+      <div id="lock-error" class="lock-error" hidden></div>
+    </form>
+    <p class="lock-note">One code per buyer — it registers to your name on first use.</p>
+  </div>
+</div>
+
+<!-- ================= app ================= -->
+<div id="app" hidden>
+  <div id="license-bar" class="license-bar" hidden>
+    Licensed to <span id="license-name"></span> · <span id="license-code"></span> · Commercial licence included for the packs you create
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <h1>🎉 Party Games Studio Pro</h1>
+        <p>Pick an occasion, tick the games, type the names — print a complete matching party game pack.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- 1 · occasion -->
+    <section class="panel">
+      <h2>1 · Choose the occasion</h2>
+      <div class="row">
+        <label class="field grow">Occasion
+          <select id="occasion-select"></select>
+        </label>
+        <div class="occasion-blurb" id="occasion-blurb"></div>
+      </div>
+    </section>
+
+    <!-- 2 · personalize -->
+    <section class="panel">
+      <h2>2 · Personalize</h2>
+      <div class="row">
+        <label class="field">Guest of honor’s name
+          <input id="in-honoree" type="text" placeholder="e.g. Emily">
+        </label>
+        <label class="field">Partner / second name <span class="opt">(optional)</span>
+          <input id="in-honoree2" type="text" placeholder="e.g. James">
+        </label>
+        <label class="field">Event date
+          <input id="in-date" type="text" placeholder="e.g. June 14, 2027">
+        </label>
+        <label class="field">Host name
+          <input id="in-host" type="text" placeholder="e.g. Sarah">
+        </label>
+      </div>
+      <p class="hint">These appear on the cover, cards, certificates and tags. Leave a field blank and a friendly default is used.</p>
+    </section>
+
+    <!-- 3 · design & print -->
+    <section class="panel">
+      <h2>3 · Design &amp; print settings</h2>
+      <div class="row">
+        <label class="field grow">Design theme <span class="opt">(applies to the whole pack)</span>
+          <select id="design-select"></select>
+        </label>
+        <div class="swatches" id="design-swatches"></div>
+      </div>
+      <p class="hint" id="design-blurb"></p>
+      <div class="row">
+        <label class="field">Card size
+          <select id="size-select">
+            <option value="5x7">5×7 in cards (2 per sheet)</option>
+            <option value="half">Half-sheet cards (2 per sheet)</option>
+            <option value="full">Full-page cards (1 per sheet)</option>
+          </select>
+        </label>
+        <label class="field">Paper
+          <select id="paper-select">
+            <option value="letter">US Letter</option>
+            <option value="a4">A4</option>
+          </select>
+        </label>
+        <label class="field">Copies of each game card
+          <input id="in-copies" type="number" min="1" max="12" value="4">
+        </label>
+        <label class="field">Your business / brand <span class="opt">(prints on the pack)</span>
+          <input id="in-business" type="text" value="Songlap Deals">
+        </label>
+      </div>
+      <div class="row checks">
+        <label class="check"><input type="checkbox" id="cover-on" checked> Designed front cover</label>
+        <label class="check"><input type="checkbox" id="backcover-on" checked> Designed back cover</label>
+        <label class="check"><input type="checkbox" id="inksaver-on"> Ink-saver printing</label>
+        <label class="check"><input type="checkbox" id="cutmarks-on" checked> Cut marks</label>
+      </div>
+    </section>
+
+    <!-- 4 · games -->
+    <section class="panel">
+      <h2>4 · Pick the games</h2>
+      <p class="hint">Tick the games to include. Every game’s questions and items can be edited — open “Edit content”, change anything, and the host guide’s answer keys update automatically.</p>
+      <div id="games-list"></div>
+    </section>
+
+    <!-- 5 · build -->
+    <section class="panel">
+      <h2>5 · Build your pack</h2>
+      <div class="row">
+        <button id="build-btn" class="btn btn-gold btn-big">Build my pack</button>
+      </div>
+      <p id="build-status" class="hint"></p>
+      <div class="row">
+        <button id="print-btn" class="btn btn-teal" disabled>Print / Save PDF</button>
+        <button id="png-btn" class="btn btn-teal" disabled>Download cover PNG</button>
+      </div>
+      <div id="book-preview" class="book-preview"></div>
+    </section>
+
+    <!-- 6 · projects -->
+    <section class="panel">
+      <h2>6 · My projects</h2>
+      <div class="row">
+        <label class="field grow">Project name
+          <input id="project-name" type="text" placeholder="e.g. Emily’s baby shower — pastel">
+        </label>
+        <button id="project-save" class="btn btn-teal">Save project</button>
+      </div>
+      <div id="projects-list"></div>
+    </section>
+
+    <!-- help -->
+    <section class="panel help">
+      <h2>How it works</h2>
+      <ul>
+        <li><strong>Print:</strong> use “Print / Save PDF” and print at 100% scale. The pack includes a front cover, a host guide with every answer key, the game cards, certificates, tags, a scorecard and a back cover.</li>
+        <li><strong>Editing:</strong> every question, word list and prompt in the built-in libraries can be changed in the “Edit content” boxes. One item per line; for questions with answers use <em>Question | Answer</em>.</li>
+        <li><strong>Selling your packs?</strong> Your licence covers selling the finished party game packs you create (see the Commercial Use Licence in your download). The tool and your code themselves must never be shared or resold.</li>
+        <li><strong>Projects</strong> are saved in this browser only. Switching occasion clears content edits, so save a project first if you want to keep them.</li>
+      </ul>
+    </section>
+
+  </main>
+  <footer class="site-footer">Party Games Studio Pro · A Songlap Deals tool</footer>
+</div>
+
+<style id="book-style"></style>
+<script src="content.js"></script>
+<script src="designs.js"></script>
+<script src="engine.js"></script>
+<script src="book.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
