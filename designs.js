@@ -120,6 +120,42 @@ var PTG_DESIGNS = [
     accent: '#111111', freeBg: '#eeeeee', borderStyle: 'solid', radius: 2,
     headerFont: 'Arial, Helvetica, sans-serif',
     cellFont: 'Arial, Helvetica, sans-serif'
+  },
+  {
+    id: 'halloween', name: 'Halloween Spooktacular',
+    blurb: 'Cute-spooky pumpkins & ghosts — Halloween parties & get-togethers',
+    pageBg: '#fff8ec', cardBg: '#fffdf6', headerBg: '#e88932', headerText: '#fff8ec',
+    cellBg: '#ffffff', cellAlt: '#fdeeda', cellText: '#2b2b2b', cellBorder: '#d9b48f',
+    accent: '#9b7ede', freeBg: '#dcebd9', borderStyle: 'dotted', radius: 12,
+    headerFont: '"Trebuchet MS", "Segoe UI", sans-serif',
+    cellFont: '"Segoe UI", Arial, sans-serif'
+  },
+  {
+    id: 'valentine', name: 'Valentine\u2019s Sweetheart',
+    blurb: 'Cherry red & blush hearts — Valentine\u2019s & Galentine\u2019s parties, showers',
+    pageBg: '#fff9f4', cardBg: '#fffdfb', headerBg: '#c94b59', headerText: '#fff5f6',
+    cellBg: '#ffffff', cellAlt: '#fdeef1', cellText: '#57222b', cellBorder: '#d99ba8',
+    accent: '#c94b59', freeBg: '#f6d6dc', borderStyle: 'double', radius: 12,
+    headerFont: '"Palatino Linotype", "Book Antiqua", Georgia, serif',
+    cellFont: 'Georgia, "Times New Roman", serif'
+  },
+  {
+    id: 'coquette', name: 'Coquette Pink Bow',
+    blurb: 'Satin bows & ballet pink — bridal & baby showers, birthdays',
+    pageBg: '#ffffff', cardBg: '#ffffff', headerBg: '#f4c2d7', headerText: '#3a3537',
+    cellBg: '#ffffff', cellAlt: '#fdf0f5', cellText: '#3a3537', cellBorder: '#e89eb8',
+    accent: '#d87a9e', freeBg: '#fbe3ee', borderStyle: 'double', radius: 14,
+    headerFont: '"Palatino Linotype", "Book Antiqua", Georgia, serif',
+    cellFont: 'Georgia, "Times New Roman", serif'
+  },
+  {
+    id: 'holidayplaid', name: 'Holiday Plaid Christmas',
+    blurb: 'Cranberry, pine & gold plaid cheer — Christmas & holiday parties',
+    pageBg: '#ffffff', cardBg: '#ffffff', headerBg: '#c83e3b', headerText: '#fff7ea',
+    cellBg: '#ffffff', cellAlt: '#f2f6f1', cellText: '#2e4438', cellBorder: '#b9cdbd',
+    accent: '#2e5a44', freeBg: '#f3e3b3', borderStyle: 'double', radius: 8,
+    headerFont: 'Georgia, "Times New Roman", serif',
+    cellFont: '"Segoe UI", Arial, sans-serif'
   }
 ];
 
