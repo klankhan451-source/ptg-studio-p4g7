@@ -433,14 +433,14 @@ PTG_OCCASIONS.push({
       ['Traditional', 'Modern']
     ],
     overunder: [
-      ['The average US engagement lasts about 14 months — over or under 12?', 'Over — 12 to 15 months'],
-      ['The average wedding hosts about 115 guests — over or under 100?', 'Over — about 115'],
-      ['An average wedding cake serves 3 tiers — over or under 2?', 'Over — 3 tiers is typical'],
-      ['Couples spend about $30,000 on a wedding — over or under $20,000?', 'Over — around $30,000'],
-      ['A bride tries on about 10 dresses before choosing — over or under 5?', 'Over — around 10'],
-      ['About 40% of proposals land in Dec–Feb — over or under 25%?', 'Over — about 40%'],
-      ['The average bridal party has about 5 attendants per side — over or under 3?', 'Over — about 5'],
-      ['A first dance usually lasts about 3 minutes — over or under 5?', 'Under — about 3 minutes']
+      ['How long does the average US engagement last — over or under 12 months?', 'Over — 12 to 15 months'],
+      ['How many guests does the average wedding host — over or under 100?', 'Over — about 115'],
+      ['How many tiers does an average wedding cake have — over or under 2?', 'Over — 3 tiers is typical'],
+      ['How much do couples spend on a wedding — over or under $20,000?', 'Over — around $30,000'],
+      ['How many dresses does a bride try on before choosing — over or under 5?', 'Over — around 10'],
+      ['What share of proposals land in Dec–Feb — over or under 25%?', 'Over — about 40%'],
+      ['How many attendants does the average bridal party have per side — over or under 3?', 'Over — about 5'],
+      ['How long does a first dance usually last — over or under 5 minutes?', 'Under — about 3 minutes']
     ],
     priceright: [
       ['Bridal bouquet, florist-made', '$185.00'],
@@ -615,14 +615,14 @@ PTG_OCCASIONS.push({
       ['Matching tees', 'Little black dresses'], ['Toast first', 'Dance first']
     ],
     overunder: [
-      ['The average bride has about 5 bridesmaids — over or under 3?', 'Over — about 4 to 5'],
-      ['A bachelorette party usually lasts about 2 days — over or under 1?', 'Over — a full weekend is common'],
-      ['About 1 in 3 couples meet online — over or under 1 in 4?', 'Over — about 1 in 3'],
-      ['The average wedding costs about $30,000 — over or under $25,000?', 'Over — around $30,000'],
-      ['Guests eat about 1 slice of wedding cake each — over or under 2?', 'Under — about 1 slice'],
-      ['The average engagement is about 14 months — over or under 10?', 'Over — 12 to 15 months'],
-      ['A bouquet toss tradition is about 500 years old in some form — over or under 100?', 'Over — centuries old'],
-      ['The average first dance lasts about 3 minutes — over or under 5?', 'Under — about 3 minutes']
+      ['How many bridesmaids does the average bride have — over or under 3?', 'Over — about 4 to 5'],
+      ['How long does a bachelorette party usually last — over or under 1 day?', 'Over — a full weekend is common'],
+      ['How many couples meet online — over or under 1 in 4?', 'Over — about 1 in 3'],
+      ['How much does the average wedding cost — over or under $25,000?', 'Over — around $30,000'],
+      ['How many slices of wedding cake does each guest eat — over or under 2?', 'Under — about 1 slice'],
+      ['How long is the average engagement — over or under 10 months?', 'Over — 12 to 15 months'],
+      ['How old is the bouquet toss tradition — over or under 100 years?', 'Over — centuries old'],
+      ['How long does the average first dance last — over or under 5 minutes?', 'Under — about 3 minutes']
     ],
     truefalse: [
       ['Bridesmaids once dressed identically to the bride to confuse evil spirits.', 'True'],
@@ -771,14 +771,14 @@ PTG_OCCASIONS.push({
       ['This year', 'Next year']
     ],
     overunder: [
-      ['About 2 billion birthday cards are sent yearly in the US — over or under 1 billion?', 'Over — about 2 billion'],
-      ['In a group of 23 people, a shared birthday is 50% likely — over or under 30 people?', 'Under — just 23'],
-      ['The average person has about 10 close friends at a birthday — over or under 5?', 'Over — about 10'],
-      ['"Happy Birthday" is sung about 50 million times a year in the US alone — over or under 10 million?', 'Over — tens of millions'],
-      ['September is the busiest birth month — over or under 300,000 US births?', 'Over — about 340,000 in September'],
-      ['The world record for oldest living person passed 120 years — over or under 115?', 'Over — 122 years (Jeanne Calment)'],
-      ['A leap-day birthday occurs once every 4 years — over or under 3?', 'Over — every 4 years'],
-      ['The average American eats about 2 slices of cake at a party — over or under 1?', 'Over — about 2']
+      ['How many birthday cards are sent yearly in the US — over or under 1 billion?', 'Over — about 2 billion'],
+      ['In a group of how many people is a shared birthday 50% likely — over or under 30?', 'Under — just 23'],
+      ['How many close friends does the average person have at their birthday — over or under 5?', 'Over — about 10'],
+      ['How many times a year is "Happy Birthday" sung in the US alone — over or under 10 million?', 'Over — tens of millions'],
+      ['How many US births happen in September, the busiest birth month — over or under 300,000?', 'Over — about 340,000 in September'],
+      ['How old was the oldest person ever — over or under 115 years?', 'Over — 122 years (Jeanne Calment)'],
+      ['A leap-day birthday comes around once every how many years — over or under 3?', 'Over — every 4 years'],
+      ['How many slices of cake does the average American eat at a party — over or under 1?', 'Over — about 2']
     ],
     priceright: [
       ['Greeting card, premium', '$6.50'],
@@ -1086,14 +1086,14 @@ PTG_OCCASIONS.push({
       ['Naughty', 'Nice']
     ],
     overunder: [
-      ['The song "White Christmas" has sold about 50 million copies — over or under 25 million?', 'Over — about 50 million'],
-      ['Americans send about 1.3 billion Christmas cards a year — over or under 1 billion?', 'Over — about 1.3 billion'],
-      ['The tallest cut Christmas tree ever was about 221 feet — over or under 150 feet?', 'Over — 221 feet (Seattle, 1950)'],
-      ['Santa would need to visit about 800 homes per second — over or under 100?', 'Over — by playful estimates'],
-      ['The average US household spends about $900 on Christmas — over or under $500?', 'Over — around $900'],
-      ['"Jingle Bells" was written about 165 years ago — over or under 100?', 'Over — written in 1857'],
-      ['Norway has sent London a tree for over 75 years — over or under 50?', 'Over — since 1947'],
-      ['A snowflake has 6 sides — over or under 4?', 'Over — exactly 6']
+      ['How many copies has the song "White Christmas" sold — over or under 25 million?', 'Over — about 50 million'],
+      ['How many Christmas cards do Americans send a year — over or under 1 billion?', 'Over — about 1.3 billion'],
+      ['How tall was the tallest cut Christmas tree ever — over or under 150 feet?', 'Over — 221 feet (Seattle, 1950)'],
+      ['How many homes per second would Santa need to visit — over or under 100?', 'Over — by playful estimates'],
+      ['How much does the average US household spend on Christmas — over or under $500?', 'Over — around $900'],
+      ['How long ago was "Jingle Bells" written — over or under 100 years?', 'Over — written in 1857'],
+      ['For how many years has Norway sent London a Christmas tree — over or under 50?', 'Over — since 1947'],
+      ['How many sides does a snowflake have — over or under 4?', 'Over — exactly 6']
     ],
     priceright: [
       ['Fresh-cut Christmas tree, 6 ft', '$79.99'],
@@ -1258,14 +1258,14 @@ PTG_OCCASIONS.push({
       ['Leftovers sandwich', 'Leftovers soup'], ['Gratitude toast', 'Silent thanks']
     ],
     overunder: [
-      ['About 46 million turkeys are eaten at Thanksgiving — over or under 30 million?', 'Over — about 46 million'],
-      ['The average Thanksgiving dinner runs about 3,000 calories — over or under 2,000?', 'Over — about 3,000'],
-      ['The first Macy’s parade was in 1924 — over or under 100 years ago?', 'Over — 100+ years'],
-      ['A typical Thanksgiving turkey weighs about 16 pounds — over or under 10?', 'Over — 15 to 16 pounds'],
-      ['The first Thanksgiving lasted 3 days — over or under 1?', 'Over — three days'],
-      ['Americans eat about 80 million pounds of cranberries at Thanksgiving — over or under 50 million?', 'Over — about 80 million'],
-      ['The average host cooks for about 10 guests — over or under 5?', 'Over — about 10'],
-      ['A turkey can run about 20 mph — over or under 10 mph?', 'Over — up to 20 mph']
+      ['How many turkeys are eaten at Thanksgiving — over or under 30 million?', 'Over — about 46 million'],
+      ['How many calories does the average Thanksgiving dinner run — over or under 2,000?', 'Over — about 3,000'],
+      ['How long ago was the first Macy’s Thanksgiving parade — over or under 100 years?', 'Over — 100+ years'],
+      ['How much does a typical Thanksgiving turkey weigh — over or under 10 pounds?', 'Over — 15 to 16 pounds'],
+      ['How many days did the first Thanksgiving last — over or under 1?', 'Over — three days'],
+      ['How many pounds of cranberries do Americans eat at Thanksgiving — over or under 50 million?', 'Over — about 80 million'],
+      ['How many guests does the average Thanksgiving host cook for — over or under 5?', 'Over — about 10'],
+      ['How fast can a turkey run — over or under 10 mph?', 'Over — up to 20 mph']
     ],
     priceright: [
       ['Whole frozen turkey, 14 lb', '$21.00'],
@@ -1432,14 +1432,14 @@ PTG_OCCASIONS.push({
       ['Dream job', 'Dream city']
     ],
     overunder: [
-      ['Harvard was founded in 1636 — over or under 400 years ago?', 'Under — about 390 years (as of 2026)'],
-      ['The average bachelor’s degree takes about 5 years for many students — over or under 4?', 'Over — closer to 5 for many'],
-      ['About 4 million students graduate US high schools yearly — over or under 2 million?', 'Over — about 3.5 to 4 million'],
-      ['The cap toss tradition is about 110 years old — over or under 50?', 'Over — since 1912'],
-      ['A graduate will change careers about 5 times in a lifetime (common estimate) — over or under 2?', 'Over — several changes are typical'],
-      ['The world’s oldest university opened in 859 — over or under 1,000 years ago?', 'Over — more than 1,100 years'],
-      ['The average graduation party hosts about 20 guests — over or under 10?', 'Over — about 20'],
-      ['Graduation season peaks in May and June — over or under 2 months?', 'Under — about 2 months']
+      ['How long ago was Harvard founded — over or under 400 years?', 'Under — about 390 years (as of 2026)'],
+      ['How long does the average bachelor’s degree take for many students — over or under 4 years?', 'Over — closer to 5 for many'],
+      ['How many students graduate US high schools yearly — over or under 2 million?', 'Over — about 3.5 to 4 million'],
+      ['How old is the cap toss tradition — over or under 50 years?', 'Over — since 1912'],
+      ['How many times will a graduate change careers in a lifetime (common estimate) — over or under 2?', 'Over — several changes are typical'],
+      ['The world’s oldest university opened how long ago — over or under 1,000 years?', 'Over — more than 1,100 years'],
+      ['How many guests does the average graduation party host — over or under 10?', 'Over — about 20'],
+      ['How many months does the graduation-season peak span — over or under 2?', 'Under — about 2 months']
     ],
     priceright: [
       ['Cap and gown set', '$39.99'],
@@ -1605,14 +1605,14 @@ PTG_OCCASIONS.push({
       ['Hugs', 'High fives']
     ],
     overunder: [
-      ['The average reunion draws about 60 guests — over or under 40?', 'Over — about 50 to 70'],
-      ['A century holds about 4 to 5 generations — over or under 3?', 'Over — 4 to 5'],
-      ['The largest family reunions draw thousands — over or under 1,000?', 'Over — 4,800+ recorded'],
-      ['Most reunions happen in July — over or under 6 months into the year?', 'Over — July is month 7'],
-      ['The average person has dozens of second cousins — over or under 10?', 'Over — dozens'],
-      ['Family reunions boomed in the 1950s — over or under 75 years ago?', 'Under — about 70 years (as of 2026)'],
-      ['A family tree typically traces 5 generations — over or under 2?', 'Over — 4 to 6'],
-      ['About 40% of Americans attend reunions regularly — over or under 25%?', 'Over — about 40%']
+      ['How many guests does the average reunion draw — over or under 40?', 'Over — about 50 to 70'],
+      ['How many generations does a century hold — over or under 3?', 'Over — 4 to 5'],
+      ['How many people do the largest family reunions draw — over or under 1,000?', 'Over — 4,800+ recorded'],
+      ['How many months into the year is the most popular reunion month — over or under 6?', 'Over — July is month 7'],
+      ['How many second cousins does the average person have — over or under 10?', 'Over — dozens'],
+      ['How long ago did family reunions boom — over or under 75 years?', 'Under — about 70 years (as of 2026)'],
+      ['How many generations does a family tree typically trace — over or under 2?', 'Over — 4 to 6'],
+      ['What share of Americans attend reunions regularly — over or under 25%?', 'Over — about 40%']
     ],
     priceright: [
       ['Disposable tablecloth, party pack', '$8.99'],
@@ -1788,14 +1788,14 @@ PTG_OCCASIONS.push({
       ['Date night out', 'Date night in'], ['Flowers', 'Chocolates']
     ],
     overunder: [
-      ['About 1 billion Valentine’s cards are exchanged yearly — over or under 500 million?', 'Over — about 1 billion'],
-      ['Americans spend about $26 billion on Valentine’s Day — over or under $10 billion?', 'Over — around $25–26 billion'],
-      ['About 250 million roses are grown for the day — over or under 100 million?', 'Over — about 250 million'],
-      ['Galentine’s Day falls on Feb 13 — over or under a week before Valentine’s?', 'Under — just 1 day before'],
-      ['Conversation hearts carry about 10 billion candies a year in peak production — over or under 1 billion?', 'Over — billions produced'],
-      ['About 6 million couples get engaged on Valentine’s Day (US estimates) — over or under 1 million?', 'Over — millions of proposals'],
-      ['The oldest known valentine poem dates to 1415 — over or under 600 years ago?', 'Over — 600+ years'],
-      ['Jewelry leads Valentine’s spending — over or under $1 billion?', 'Over — several billion dollars']
+      ['How many Valentine’s cards are exchanged yearly — over or under 500 million?', 'Over — about 1 billion'],
+      ['How much do Americans spend on Valentine’s Day — over or under $10 billion?', 'Over — around $25–26 billion'],
+      ['How many roses are grown for Valentine’s Day — over or under 100 million?', 'Over — about 250 million'],
+      ['Galentine’s Day falls how long before Valentine’s Day — over or under a week?', 'Under — just 1 day before'],
+      ['How many conversation-heart candies are made in a peak year — over or under 1 billion?', 'Over — billions produced'],
+      ['How many couples get engaged on Valentine’s Day (US estimates) — over or under 1 million?', 'Over — millions of proposals'],
+      ['The oldest known valentine poem dates from how long ago — over or under 600 years?', 'Over — 600+ years'],
+      ['How much is spent on jewelry for Valentine’s Day — over or under $1 billion?', 'Over — several billion dollars']
     ],
     priceright: [
       ['Dozen red roses, florist', '$59.99'],
