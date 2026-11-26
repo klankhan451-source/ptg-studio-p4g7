@@ -385,7 +385,7 @@ if (typeof module !== 'undefined' && module.exports) {
     $('print-btn').disabled = false;
     $('png-btn').disabled = false;
     $('build-status').textContent = '✅ Pack built: ' + book.pageCount + ' pages · ' +
-      pack.games.length + ' games & extras · Pack ' + pack.id + '. Preview below — check it, then Print / Save PDF.';
+      BK.gameCount(pack) + ' games & extras · Pack ' + pack.id + '. Preview below — check it, then Print / Save PDF.';
   }
 
   function doPrint() {
@@ -465,7 +465,7 @@ if (typeof module !== 'undefined' && module.exports) {
     ctx.fillText('Hosted by ' + pack.tokens.host, 750, y); y += 130;
     ctx.font = 'bold 46px ' + d.cellFont;
     ctx.fillStyle = d.accent;
-    ctx.fillText('INCLUDES: ' + pack.games.length + ' games & extras · host guide · answer keys', 750, y);
+    ctx.fillText('INCLUDES: ' + BK.gameCount(pack) + ' games & extras · host guide · answer keys', 750, y);
     /* band + business */
     ctx.fillStyle = d.headerBg;
     roundRect(ctx, 170, 1690, 1160, 120, 18); ctx.fill();
