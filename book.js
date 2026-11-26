@@ -173,8 +173,14 @@ function bookCss(design, opts) {
   '.cert-cols { display: flex; gap: 14mm; margin: 10mm 10mm 0; }' +
   '.cert-col { flex: 1; border-top: 1.4px solid ' + d.cellText + '; padding-top: 1.5mm; font-size: 9.5pt; opacity: .8; }' +
   /* ---- tags ---- */
+  /* Tag size is capped so the 8-tag sheet (3 per row x 3 rows, 5mm gaps,
+     3mm top inset, 2mm cut-mark outlines) fits ONE printed page in
+     Chromium on both papers: 3x58 + 2x5 = 184mm <= 190mm (A4 content
+     width); 3 + 3x80 + 2x5 = 253mm <= 259.4mm (Letter content height).
+     At the old 62x92mm the sheet fragmented onto a 2nd page in Chromium
+     while the tool counted it as 1 page. */
   '.bk-tags { display: flex; flex-wrap: wrap; gap: 5mm; justify-content: center; margin-top: 3mm; }' +
-  '.gtag { width: 62mm; height: 92mm; border: 2px solid ' + d.cellBorder + '; border-radius: ' + d.radius + 'px; background: ' + d.cardBg + '; text-align: center; padding: 6mm 4mm; box-sizing: border-box; ' + (opts.cutMarks === false ? '' : 'outline: 1px dashed #999; outline-offset: 2mm;') + ' }' +
+  '.gtag { width: 58mm; height: 80mm; border: 2px solid ' + d.cellBorder + '; border-radius: ' + d.radius + 'px; background: ' + d.cardBg + '; text-align: center; padding: 6mm 4mm; box-sizing: border-box; ' + (opts.cutMarks === false ? '' : 'outline: 1px dashed #999; outline-offset: 2mm;') + ' }' +
   '.gtag .tg-emoji { font-size: 20pt; }' +
   '.gtag h3 { font-family: ' + d.headerFont + '; color: ' + d.headerBg + '; font-size: 15pt; margin: 3mm 0 2mm; }' +
   '.gtag p { font-size: 10pt; line-height: 1.5; }' +
