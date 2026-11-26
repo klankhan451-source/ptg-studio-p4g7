@@ -71,7 +71,10 @@ function bookCss(design, opts) {
   var P = PAPER[opts.paper] || PAPER.letter;
   var cw = P.wmm - PAGE_MARGIN_MM * 2;          // portrait content width
   var ch = P.hmm - PAGE_MARGIN_MM * 2;          // portrait content height
-  var halfH = Math.floor((ch - 5) / 2);         // half-sheet card height
+  /* Card sheets are inset 3mm from the page's content-box top (see the
+     .bk-cards margin below), so half/full card heights shrink to keep
+     each outlined card + its cut-mark outline inside the page box. */
+  var halfH = Math.floor((ch - 5) / 2) - 3;     // half-sheet card height
   return '' +
   '@page { size: ' + P.w + ' ' + P.h + '; margin: ' + PAGE_MARGIN_MM + 'mm; }' +
   '@page land { size: ' + P.h + ' ' + P.w + '; margin: ' + PAGE_MARGIN_MM + 'mm; }' +
@@ -125,13 +128,17 @@ function bookCss(design, opts) {
   '.bk-keys li { font-size: 10.5pt; line-height: 1.5; margin-bottom: 1.6mm; break-inside: avoid; }' +
   '.bk-keys .k-q { opacity: .75; font-size: 9.5pt; }' +
   /* ---- game cards ---- */
-  '.bk-cards { display: flex; gap: 5mm; justify-content: center; align-content: flex-start; }' +
+  /* The 3mm top inset keeps the first cards' dashed cut-mark outlines
+     (outline-offset 2.2mm) inside the page box: Chromium otherwise
+     paints the strip of outline that falls above the content box onto
+     the BOTTOM of the previous printed page (stray dashed fragments). */
+  '.bk-cards { display: flex; gap: 5mm; justify-content: center; align-content: flex-start; margin-top: 3mm; }' +
   '.bk-cards.stack { flex-direction: column; align-items: stretch; }' +
   '.bk-cards.row { flex-direction: row; }' +
   '.gcard { background: ' + d.cardBg + '; border: 2.5px solid ' + d.cellBorder + '; border-radius: ' + d.radius + 'px; padding: 4mm; box-sizing: border-box; overflow: hidden; ' + (opts.cutMarks === false ? '' : 'outline: 1px dashed #999; outline-offset: 2.2mm;') + ' }' +
   '.gcard.sz-5x7 { width: 127mm; height: 177.8mm; }' +
   '.gcard.sz-half { width: 100%; height: ' + halfH + 'mm; }' +
-  '.gcard.sz-full { width: 100%; height: ' + ch + 'mm; }' +
+  '.gcard.sz-full { width: 100%; height: ' + (ch - 6) + 'mm; }' +
   '.gc-head { background: ' + d.headerBg + '; color: ' + d.headerText + '; font-family: ' + d.headerFont + '; text-align: center; border-radius: ' + Math.max(2, d.radius - 3) + 'px; padding: 2mm; margin-bottom: 3mm; }' +
   '.gc-title { font-size: 13.5pt; font-weight: bold; line-height: 1.2; }' +
   '.gc-sub { font-size: 8.5pt; opacity: .85; }' +
@@ -166,7 +173,7 @@ function bookCss(design, opts) {
   '.cert-cols { display: flex; gap: 14mm; margin: 10mm 10mm 0; }' +
   '.cert-col { flex: 1; border-top: 1.4px solid ' + d.cellText + '; padding-top: 1.5mm; font-size: 9.5pt; opacity: .8; }' +
   /* ---- tags ---- */
-  '.bk-tags { display: flex; flex-wrap: wrap; gap: 5mm; justify-content: center; }' +
+  '.bk-tags { display: flex; flex-wrap: wrap; gap: 5mm; justify-content: center; margin-top: 3mm; }' +
   '.gtag { width: 62mm; height: 92mm; border: 2px solid ' + d.cellBorder + '; border-radius: ' + d.radius + 'px; background: ' + d.cardBg + '; text-align: center; padding: 6mm 4mm; box-sizing: border-box; ' + (opts.cutMarks === false ? '' : 'outline: 1px dashed #999; outline-offset: 2mm;') + ' }' +
   '.gtag .tg-emoji { font-size: 20pt; }' +
   '.gtag h3 { font-family: ' + d.headerFont + '; color: ' + d.headerBg + '; font-size: 15pt; margin: 3mm 0 2mm; }' +
@@ -301,8 +308,11 @@ function tagsPage(pack, opts) {
 }
 
 function scorecardPage(pack, opts) {
+  /* Only scored games get a row (keepsake activities like Predictions
+     & Wishes, Advice Cards and Mad-Libs have no points to track);
+     Guess the Number IS scored — it has a winner. */
   var rows = pack.games.filter(function (g) {
-    return ['tags', 'certificates', 'scorecard', 'guess'].indexOf(g.def.id) === -1;
+    return !!g.def.scored;
   }).map(function (g) {
     return '<tr><td>' + esc(g.def.name) + '</td><td></td><td></td><td></td></tr>';
   }).join('');
@@ -342,6 +352,13 @@ function barcodeHtml(pack) {
     '<div class="bc-label">' + esc(pack.id) + '</div></div>';
 }
 
+/* Games-only count for the cover: station extras that are not games
+   (Award Certificates, Favor Tags, Scorecard) are excluded — they are
+   the "& extras" the cover line refers to. */
+function gameCount(pack) {
+  return pack.games.filter(function (g) { return !g.def.extra; }).length;
+}
+
 function coverPage(pack, opts) {
   var gameNames = pack.games.map(function (g) { return g.def.name; });
   var mini = '';
@@ -362,7 +379,7 @@ function coverPage(pack, opts) {
     '<h2>' + esc(pack.occasion.tagline) + '</h2>' +
     '<div class="cov-meta">For ' + esc(pack.tokens.honoree) + dateLine + '<br>' +
     'Hosted by ' + esc(pack.tokens.host) + '</div>' +
-    '<div class="cov-inc">INCLUDES: ' + pack.games.length + ' games &amp; extras · host guide · answer keys</div>' +
+    '<div class="cov-inc">INCLUDES: ' + gameCount(pack) + ' games &amp; extras · host guide · answer keys</div>' +
     mini +
     '<div class="cov-band">Print · cut · play — everything in this pack matches, ready in minutes</div>' +
     '<div class="cov-biz">' + esc(opts.business || 'Songlap Deals') + '</div>' +
@@ -377,7 +394,7 @@ function backCoverPage(pack, opts) {
     '<h3>How it works</h3>' +
     '<p class="back-how">Print the pack, cut the cards along the marks,<br>' +
     'hand one card to each guest — and let the games begin.<br>' +
-    'The host guide at the front explains every game and holds all the answers.</p>' +
+    'The host guide explains every game, with answer keys and prep sheets inside.</p>' +
     '<div class="back-thanks">Thank you for celebrating with us!</div>' +
     '<div class="back-biz">' + esc(opts.business || 'Songlap Deals') + '</div>' +
     barcodeHtml(pack) +
@@ -418,6 +435,38 @@ function guidePages(pack, opts) {
       }).join('');
       pages.push('<div class="bk-page bk-guide"><h2>Answer Sheet — ' + esc(know.def.name) + '</h2>' +
         '<p>Fill this in with the guest of honor, then use it to score the guests’ cards.</p>' + chunk + '</div>');
+    }
+  }
+  /* fill-in answer sheet for Would You Rather — the guest of honor's
+     own choices, which the guests' cards are scored against */
+  var rather = null;
+  games.forEach(function (g) { if (g.def.id === 'rather') rather = g; });
+  if (rather) {
+    for (var r = 0; r < rather.items.length; r += 10) {
+      var rchunk = rather.items.slice(r, r + 10).map(function (it, j) {
+        return itemHtml(rather, it, r + j + 1, pack);
+      }).join('');
+      pages.push('<div class="bk-page bk-guide"><h2>Answer Sheet — ' + esc(rather.def.name) + '</h2>' +
+        '<p>Ask the guest of honor to pick one from each pair before the party — or reveal the choices live. ' +
+        'Guests score one point whenever their pick matches.</p>' + rchunk + '</div>');
+    }
+  }
+  /* Mad-Libs word-collection sheet — the host collects one word per
+     blank (in story order) without showing guests the story */
+  var madlibs = null;
+  games.forEach(function (g) { if (g.def.id === 'madlibs') madlibs = g; });
+  if (madlibs && madlibs.story) {
+    var labels = (String(madlibs.story.story).match(/\[([^\]]+)\]/g) || []).map(function (m) {
+      return m.slice(1, -1);
+    });
+    for (var w = 0; w < labels.length; w += 12) {
+      var wchunk = labels.slice(w, w + 12).map(function (label, j) {
+        return '<div class="gi"><span class="gi-n">' + (w + j + 1) + '.</span> ' + esc(label) +
+          '<div class="gi-line"></div></div>';
+      }).join('');
+      pages.push('<div class="bk-page bk-guide"><h2>Word Collection Sheet — ' + esc(madlibs.def.name) + '</h2>' +
+        '<p>Collect one word for each blank from the guests — without showing them the story! ' +
+        'Write the words in order, then fill them into the story card and read it aloud.</p>' + wchunk + '</div>');
     }
   }
   /* answer keys — derived from the same items the cards print */
@@ -479,7 +528,8 @@ var PartyBook = {
   buildBook: buildBook,
   capacityFor: capacityFor,
   perSheet: perSheet,
-  cardHtml: cardHtml
+  cardHtml: cardHtml,
+  gameCount: gameCount
 };
 
 if (typeof module !== 'undefined' && module.exports) {
